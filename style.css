@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(255, 153, 173);
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "nav nav nav"
+      "contenido contenido sidebar"
+      "bloque1 bloque1 bloque2"
+      "footer footer footer"
+}
+
+nav {
+   background-color: rgb(248, 115, 137);
+   color: aliceblue; 
+   grid-area: nav;
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.contenido {
+   background-color: rgb(228, 52, 82);
+   color: aliceblue;
+   padding: 20px;
+   grid-area: contenido;
+   border-radius: 10px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(228, 52, 82);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.bloque {
+    color: rgb(66, 104, 254);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#bloque1 {
+    grid-area: bloque1;
+    background-color: rgb(255, 194, 114);
+}
+
+#bloque2 {
+    grid-area: bloque2;
+    background-color: rgb(124, 124, 254);
+    color: aliceblue;
+}
+
+footer {
+    background-color: coral;
+    color: aliceblue;
+    grid-area: footer;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        margin: 20px;
+        grid-template-areas: 
+         "nav nav nav"
+         "contenido contenido contenido"
+         "sidebar sidebar sidebar"
+         "bloque1 bloque1 bloque1"
+         "bloque2 bloque2 bloque2"
+         "footer footer footer";
+    }
+}
